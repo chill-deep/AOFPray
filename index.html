@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="dist/sakura.css" />
+    <title>AOF Pray</title>
+</head>
+
+<body>
+
+   
+    <div id="headPray">
+        <img class="headPrayImg" src="IMG/anh.png" alt="AOF Pray">
+    </div>
+
+
+
+    <!-- smoke -->
+    <div id="smokeId">
+        <div class="smoke-wrap">
+            <img class="smoke3" src="IMG/smoke.png" alt="smoke">
+        </div>
+        <div class="smoke-wrap">
+            <img class="smoke3" src="IMG/smoke.png" alt="smoke">
+        </div>
+        <div class="smoke-wrap">
+            <img class="smoke3" src="IMG/smoke.png" alt="smoke">
+        </div>
+    </div>
+
+
+    <div id="nhang">
+        <img id="nhangImg" src="IMG/nhang.png" alt="">
+    </div>
+
+    <div id="headerbar">
+    </div>
+    <div id="inputPray">
+        <input type="text" name="yourName" id="yourName" placeholder="Tên của bạn">
+    </div>
+
+    <div id="inputPrayText">
+        <textarea id="areaText" rows="4" placeholder="Mong muốn của bạn"></textarea>
+    </div>
+
+    <div id="btnSend">
+        <button onclick="playMusic()" id="btnSendBtn">Thắp hương</button>
+        <audio id="myAudio" src="Media/backgound11.mp3"></audio>
+    </div>
+
+    <p id="msg"></p>
+    <div id="borderError">
+    </div>
+    <div id="error">
+        <div id="errorImg">
+            <img src="IMG/warning.png" alt="">
+        </div>
+        <div class="txt">
+            <h1>Kiểm tra thông tin</h1>
+            <p>Bạn chưa nhập thông tin để ước nguyện</p>
+        </div>
+
+        <div class="btnOk">
+            <button onclick="CloseError()">Ok</button>
+        </div>
+    </div>
+
+
+    <script src="JS/script.js"></script>
+    <script src="dist/sakura.js" text="text/javascript"></script>
+</body>
+
+</html>

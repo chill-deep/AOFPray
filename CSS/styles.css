@@ -1,0 +1,854 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 600px) {
+    #headPray {
+        display: flex;
+        justify-content: center;
+        margin: 5% 15% 0 15%;
+        height: 50%;
+        width: 70%;
+    }
+
+    .headPrayImg {
+        width: 100%;
+        position: relative;
+    }
+
+    #inputPray {
+        height: 50%;
+        width: 100%;
+        margin: 4% 0 0 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    #inputPray input{
+        width: 100%;
+    }
+
+    #inputPrayText {
+        height: 50%;
+        width: 100%;
+        margin: 3% 0 0 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    #btnSend {
+        height: 50%;
+        width: 100%;
+        margin: 3% 0 0 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    #headerbar {
+        padding-top: 2%;
+    }
+
+
+    #btnSendBtn {
+        width: 50%;
+        padding: 10px 5px;
+        background-color: #1266f1;
+        color: white;
+        border-radius: 5px;
+        font-size: 16px;
+        border: 2px solid white;
+        cursor: pointer;
+    }
+
+    #btnSendBtn:hover {
+        background-color: white;
+        border: 2px solid #1266f1;
+        color: #1266f1;
+    }
+
+    #yourName {
+        border-radius: 5px;
+        border: 1px solid silver;
+        font-family: Arial, sans-serif;
+        width: 30%;
+        margin: 0 10% 0 10%;
+        outline: none;
+        font-size: medium;
+        padding: 10px 10px;
+
+    }
+
+    #yourName:focus {
+        border: 2px solid #1266f1;
+    }
+
+    #areaText {
+        border-radius: 5px;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        width: 100%;
+        margin: 0 10% 0 10%;
+        padding: 10px 10px;
+        border: 1px solid silver;
+        outline: none;
+    }
+
+    #areaText:focus {
+        border: 2px solid #1266f1;
+    }
+
+    #msg {
+        text-align: center;
+        color: #e76701;
+        font-style: italic;
+        font-weight: bold;
+        font-size: large;
+        margin-top: 1%;
+        margin-bottom: 80px;
+    }
+
+    #nhangImg {
+        width: 0;
+        position: absolute;
+        /* top: 17.5%; */
+        right: 50%;
+        left: 49.20%;
+        top: 0;
+        transition: top 3s;
+    }
+
+    /* smoke */
+    .smoke-wrap {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 73%;
+    }
+
+    #smokeId {
+        opacity: 0%;
+    }
+
+    .smoke4,
+    .smoke3 {
+        filter: blur(5px);
+        transform-origin: 50% 50%;
+    }
+
+    /* .smoke {
+        animation: smoke1 3s linear infinite;
+        animation-delay: 0.5s;
+    } */
+
+    .smoke3 {
+        width: 110%;
+        animation: smoke3 4s linear infinite;
+        animation-delay: 0s;
+    }
+
+
+    @keyframes smoke3 {
+        0% {
+            filter: blur(0px);
+            transform: translateY(0px) scale(1);
+            opacity: 0.3;
+        }
+
+        25% {
+            filter: blur(3px);
+            transform: translateY(-20px) scale(1.05);
+            opacity: 0.5;
+        }
+
+        50% {
+            filter: blur(5px);
+            transform: translateY(-40px) scale(1.1);
+            opacity: 0.8;
+        }
+
+        75% {
+            filter: blur(5px);
+            transform: translateY(-60px) scale(1.15);
+            opacity: 0.6;
+        }
+
+        100% {
+            filter: blur(7px);
+            transform: translateY(-80px) scale(1.2);
+            opacity: 0.5;
+        }
+    }
+
+    @keyframes smoke4 {
+        0% {
+            filter: blur(0px);
+            transform: translateY(0px) scale(1);
+            opacity: 0;
+        }
+
+        25% {
+            filter: blur(3px);
+            transform: translateY(-20px) scale(1.05);
+            opacity: 0.2;
+        }
+
+        50% {
+            filter: blur(5px);
+            transform: translateY(-40px) scale(1.1);
+            opacity: 0.5;
+        }
+
+        75% {
+            filter: blur(5px);
+            transform: translateY(-60px) scale(1.15);
+            opacity: 0.4;
+        }
+
+        100% {
+            filter: blur(7px);
+            transform: translateY(-80px) scale(1.2);
+            opacity: 0.5;
+        }
+    }
+
+
+    #error {
+        width: 80%;
+        height: 40vh;
+        background-color: white;
+        position: fixed;
+        top: 20vh;
+        right: 10%;
+        border-radius: 5px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        z-index: 9999;
+        display: none;
+    }
+
+    #errorImg {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    #errorImg img {
+        width: 30%;
+    }
+
+    .txt {
+        text-align: center;
+    }
+
+    .txt h1,
+    .txt p {
+        color: #595959;
+        margin-top: 2%;
+    }
+
+    .btnOk {
+        display: flex;
+        justify-content: center;
+    }
+
+    .btnOk button {
+        width: 20%;
+        height: 7vh;
+        border: 2px solid white;
+        background-color: #1266f1;
+        color: white;
+        font-size: 18px;
+        border-radius: 5px;
+        margin-top: 5%;
+        cursor: pointer;
+    }
+
+    .btnOk button:hover {
+        background-color: white;
+        border: 2px solid #1266f1;
+        color: #1266f1;
+    }
+
+    #borderError {
+        display: none;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9998;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        opacity: 0.5;
+    }
+}
+
+
+
+@media screen and (min-width: 900px) {
+
+    /* laptop */
+    #headPray {
+        display: flex;
+        justify-content: center;
+        margin: 3% 25% 0 25%;
+        height: 50%;
+        width: 50%;
+    }
+
+
+
+    .headPrayImg {
+        width: 40%;
+        position: relative;
+    }
+
+    #inputPray {
+        height: 50%;
+        width: 50%;
+        margin: 1% 25% 0 25%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #inputPrayText {
+        height: 50%;
+        width: 20%;
+        margin: 1% 40% 0 40%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #btnSend {
+        height: 50%;
+        width: 50%;
+        margin: 1% 25% 0 25%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #headerbar {
+        height: 50%;
+        width: 70%;
+        margin: 0 15% 0 15%;
+        border: 4px solid #1266f1;
+        display: flex;
+        justify-content: center;
+    }
+
+
+    #btnSendBtn {
+        width: 15%;
+        padding: 10px 5px;
+        background-color: #1266f1;
+        color: white;
+        border-radius: 5px;
+        font-size: 16px;
+        border: 2px solid white;
+        cursor: pointer;
+    }
+
+    #btnSendBtn:hover {
+        background-color: white;
+        border: 2px solid #1266f1;
+        color: #1266f1;
+    }
+
+    #yourName {
+        border-radius: 5px;
+        border: 1px solid silver;
+        font-family: Arial, sans-serif;
+        width: 30%;
+        margin: 0 10% 0 10%;
+        outline: none;
+        font-size: medium;
+        padding: 10px 10px;
+
+    }
+
+    #yourName:focus {
+        border: 2px solid #1266f1;
+    }
+
+    #areaText {
+        border-radius: 5px;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        width: 100%;
+        margin: 0 10% 0 10%;
+        padding: 10px 10px;
+        border: 1px solid silver;
+        outline: none;
+    }
+
+    #areaText:focus {
+        border: 2px solid #1266f1;
+    }
+
+    #msg {
+        text-align: center;
+        color: #e76701;
+        font-style: italic;
+        font-weight: bold;
+        font-size: large;
+        margin-top: 1%;
+        margin-bottom: 80px;
+    }
+
+    #nhangImg {
+        width: 0;
+        position: absolute;
+        /* top: 17.5%; */
+        right: 50%;
+        left: 49.75%;
+        top: 0;
+        transition: top 3s;
+    }
+
+    /* smoke */
+    .smoke-wrap {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 55%;
+    }
+
+    #smokeId {
+        opacity: 0%;
+    }
+
+    .smoke4,
+    .smoke3 {
+        filter: blur(5px);
+        transform-origin: 50% 50%;
+    }
+
+    /* .smoke {
+    animation: smoke1 3s linear infinite;
+    animation-delay: 0.5s;
+} */
+
+    .smoke3 {
+        width: 110%;
+        animation: smoke3 4s linear infinite;
+        animation-delay: 0s;
+    }
+
+
+    @keyframes smoke3 {
+        0% {
+            filter: blur(0px);
+            transform: translateY(0px) scale(1);
+            opacity: 0.3;
+        }
+
+        25% {
+            filter: blur(3px);
+            transform: translateY(-20px) scale(1.05);
+            opacity: 0.5;
+        }
+
+        50% {
+            filter: blur(5px);
+            transform: translateY(-40px) scale(1.1);
+            opacity: 0.8;
+        }
+
+        75% {
+            filter: blur(5px);
+            transform: translateY(-60px) scale(1.15);
+            opacity: 0.6;
+        }
+
+        100% {
+            filter: blur(7px);
+            transform: translateY(-80px) scale(1.2);
+            opacity: 0.5;
+        }
+    }
+
+    @keyframes smoke4 {
+        0% {
+            filter: blur(0px);
+            transform: translateY(0px) scale(1);
+            opacity: 0;
+        }
+
+        25% {
+            filter: blur(3px);
+            transform: translateY(-20px) scale(1.05);
+            opacity: 0.2;
+        }
+
+        50% {
+            filter: blur(5px);
+            transform: translateY(-40px) scale(1.1);
+            opacity: 0.5;
+        }
+
+        75% {
+            filter: blur(5px);
+            transform: translateY(-60px) scale(1.15);
+            opacity: 0.4;
+        }
+
+        100% {
+            filter: blur(7px);
+            transform: translateY(-80px) scale(1.2);
+            opacity: 0.5;
+        }
+    }
+
+
+    #error {
+        width: 40%;
+        height: 50vh;
+        background-color: white;
+        position: fixed;
+        top: 20vh;
+        right: 30%;
+        border-radius: 5px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        z-index: 9999;
+        display: none;
+    }
+
+    #errorImg {
+        display: flex;
+        justify-content: center;
+    }
+
+    #errorImg img {
+        width: 30%;
+    }
+
+    .txt {
+        text-align: center;
+    }
+
+    .txt h1,
+    .txt p {
+        color: #595959;
+        margin-top: 2%;
+    }
+
+    .btnOk {
+        display: flex;
+        justify-content: center;
+    }
+
+    .btnOk button {
+        width: 10%;
+        height: 5vh;
+        border: 2px solid white;
+        background-color: #1266f1;
+        color: white;
+        font-size: 18px;
+        border-radius: 5px;
+        margin-top: 2%;
+        cursor: pointer;
+    }
+
+    .btnOk button:hover {
+        background-color: white;
+        border: 2px solid #1266f1;
+        color: #1266f1;
+    }
+
+    #borderError {
+        display: none;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9998;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        opacity: 0.5;
+    }
+}
+
+
+@media screen and (max-width: 899px) and (min-width: 601px) {
+
+    /* laptop */
+    #headPray {
+        display: flex;
+        justify-content: center;
+        margin: 3% 15% 0 15%;
+        height: 50%;
+        width: 70%;
+    }
+
+
+
+    .headPrayImg {
+        width: 50%;
+        position: relative;
+    }
+
+    #inputPray {
+        height: 50%;
+        width: 100%;
+        margin: 2% 0 0 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    #inputPrayText {
+        height: 50%;
+        width: 40%;
+        margin: 2% 30% 0 30%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #btnSend {
+        height: 50%;
+        width: 50%;
+        margin: 3% 25% 0 25%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #headerbar {
+        height: 50%;
+        width: 70%;
+        margin: 0 15% 0 15%;
+        border: 4px solid #1266f1;
+        display: flex;
+        justify-content: center;
+    }
+
+
+    #btnSendBtn {
+        width: 40%;
+        padding: 10px 5px;
+        background-color: #1266f1;
+        color: white;
+        border-radius: 5px;
+        font-size: 16px;
+        border: 2px solid white;
+        cursor: pointer;
+    }
+
+    #btnSendBtn:hover {
+        background-color: white;
+        border: 2px solid #1266f1;
+        color: #1266f1;
+    }
+
+    #yourName {
+        border-radius: 5px;
+        border: 1px solid silver;
+        font-family: Arial, sans-serif;
+        width: 30%;
+        margin: 0 10% 0 10%;
+        outline: none;
+        font-size: medium;
+        padding: 10px 10px;
+
+    }
+
+    #yourName:focus {
+        border: 2px solid #1266f1;
+    }
+
+    #areaText {
+        border-radius: 5px;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        width: 100%;
+        margin: 0 10% 0 10%;
+        padding: 10px 10px;
+        border: 1px solid silver;
+        outline: none;
+    }
+
+    #areaText:focus {
+        border: 2px solid #1266f1;
+    }
+
+    #msg {
+        text-align: center;
+        color: #e76701;
+        font-style: italic;
+        font-weight: bold;
+        font-size: large;
+        margin-top: 1%;
+        margin-bottom: 80px;
+    }
+
+    #nhangImg {
+        width: 0;
+        position: absolute;
+        /* top: 17.5%; */
+        right: 50%;
+        left: 49.60%;
+        top: 0;
+        transition: top 3s;
+    }
+
+    /* smoke */
+    .smoke-wrap {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 65%;
+    }
+
+    #smokeId {
+        opacity: 0%;
+    }
+
+    .smoke4,
+    .smoke3 {
+        filter: blur(5px);
+        transform-origin: 50% 50%;
+    }
+
+    /* .smoke {
+    animation: smoke1 3s linear infinite;
+    animation-delay: 0.5s;
+} */
+
+    .smoke3 {
+        width: 110%;
+        animation: smoke3 4s linear infinite;
+        animation-delay: 0s;
+    }
+
+
+    @keyframes smoke3 {
+        0% {
+            filter: blur(0px);
+            transform: translateY(0px) scale(1);
+            opacity: 0.3;
+        }
+
+        25% {
+            filter: blur(3px);
+            transform: translateY(-20px) scale(1.05);
+            opacity: 0.5;
+        }
+
+        50% {
+            filter: blur(5px);
+            transform: translateY(-40px) scale(1.1);
+            opacity: 0.8;
+        }
+
+        75% {
+            filter: blur(5px);
+            transform: translateY(-60px) scale(1.15);
+            opacity: 0.6;
+        }
+
+        100% {
+            filter: blur(7px);
+            transform: translateY(-80px) scale(1.2);
+            opacity: 0.5;
+        }
+    }
+
+    @keyframes smoke4 {
+        0% {
+            filter: blur(0px);
+            transform: translateY(0px) scale(1);
+            opacity: 0;
+        }
+
+        25% {
+            filter: blur(3px);
+            transform: translateY(-20px) scale(1.05);
+            opacity: 0.2;
+        }
+
+        50% {
+            filter: blur(5px);
+            transform: translateY(-40px) scale(1.1);
+            opacity: 0.5;
+        }
+
+        75% {
+            filter: blur(5px);
+            transform: translateY(-60px) scale(1.15);
+            opacity: 0.4;
+        }
+
+        100% {
+            filter: blur(7px);
+            transform: translateY(-80px) scale(1.2);
+            opacity: 0.5;
+        }
+    }
+
+
+    #error {
+        width: 40%;
+        height: 40vh;
+        background-color: white;
+        position: fixed;
+        top: 20vh;
+        right: 30%;
+        border-radius: 5px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        z-index: 9999;
+        display: none;
+    }
+
+    #errorImg {
+        display: flex;
+        justify-content: center;
+    }
+
+    #errorImg img {
+        margin-top: 5%;
+        width: 30%;
+    }
+
+    .txt {
+        text-align: center;
+    }
+
+    .txt h1,
+    .txt p {
+        color: #595959;
+        margin-top: 2%;
+    }
+
+    .btnOk {
+        display: flex;
+        justify-content: center;
+    }
+
+    .btnOk button {
+        width: 30%;
+        height: 5vh;
+        border: 2px solid white;
+        background-color: #1266f1;
+        color: white;
+        font-size: 18px;
+        border-radius: 5px;
+        margin-top: 5%;
+        cursor: pointer;
+    }
+
+    .btnOk button:hover {
+        background-color: white;
+        border: 2px solid #1266f1;
+        color: #1266f1;
+    }
+
+    #borderError {
+        display: none;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 9998;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        opacity: 0.5;
+    }
+}
